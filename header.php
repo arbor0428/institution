@@ -1,39 +1,4 @@
-<?
-	include "/home/iacf/www/module/login/head.php";	
-	include "/home/iacf/www/module/class/class.DbCon.php";
-	include "/home/iacf/www/module/class/class.Util.php";
-	include "/home/iacf/www/module/class/class.Msg.php";
-	include "/home/iacf/www/module/loading.php";
-	require_once '/home/iacf/www/module/Mobile-Detect-master/Mobile_Detect.php';
-	$detect = new Mobile_Detect;
 
-	if($detect->isiOS())						$UserDevice = "ios";
-	elseif($detect->isAndroidOS())		$UserDevice = "android";
-	else										$UserDevice = "";
-	
-	if($detect->isMobile())	$UserOS = 'mobile';
-	else							$UserOS = 'pc';
-?>
-
-<script>
-function goSearchTop(){
-	form = document.frm_searchTop;
-
-	if(isFrmEmptyModal(form.f_wordTop,"검색어를 입력해 주십시오"))	return;
-
-	form.action = "/member/search.php";
-	form.submit();
-}
-
-function goSearchQuick(){
-	form = document.frm_searchQuick;
-
-	if(isFrmEmptyModal(form.f_wordQuick,"검색어를 입력해 주십시오"))	return;
-
-	form.action = "/member/search.php";
-	form.submit();
-}
-</script>
 
 <header id="header" class="header">
 	<div class="h_top">
